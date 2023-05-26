@@ -1,0 +1,122 @@
+.userInfo {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .userInfoWrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .personAvatar {
+            flex: 1;
+
+            .photo {
+                border-radius: 50%;
+            }
+        }
+
+        .personLogo {
+            flex: 1;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #21407d3e;
+            font-size: 50px;
+            color: #21407de5;
+        }
+
+        .person {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding-right: 10px;
+            border-right: .5px solid #21407d45;
+
+            .name {
+                font-weight: 500;
+                font-size: 22px;
+                line-height: 26px;
+                color: #21407de5;
+            }
+
+            .userNumber {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+
+                color: #21407de5;
+            }
+        }
+
+        .person:last-child {
+            flex: 3;
+            border: none;
+            padding-left: 30px;
+        }
+
+        .tier {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding-left: 30px;
+            border-right: .5px solid #21407d45;
+
+            .tierText {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+
+                color: #545F7D;
+            }
+
+            .stars {
+                color: #E9B200;
+                font-size: 14px;;
+            }
+        }
+
+
+    }
+
+    .omo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 30px;
+
+
+        span {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            padding-bottom: 7px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: rgba(0, 0, 0, 0.63);
+        }
+
+        span:nth-child(1) {
+            border-bottom: 2px solid #39CDCC;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #39CDCC;
+        }
+    }
+}

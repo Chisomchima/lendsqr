@@ -1,0 +1,18 @@
+
+.divider {
+  display: flex;
+  height: 100vh;
+
+  aside {
+    flex: 1;
+    background: #ffffff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+    height: 100%;
+  }
+
+  main {
+    flex: 4;
+    background-color: #e8d8d826;
+    height: 100%;
+  }
+}

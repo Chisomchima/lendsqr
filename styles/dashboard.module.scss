@@ -1,0 +1,17 @@
+.dashboard {
+  width: 90%;
+  padding-top: 10px;
+  margin-bottom: 50px;
+  margin: auto;
+  height: 90%;
+  overflow-y: auto;
+
+  .dashboardtitle {
+    margin-left: 40px;
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #213F7D;
+  }
+}
