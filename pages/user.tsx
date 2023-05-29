@@ -1,10 +1,10 @@
-import type { NextPage } from 'next'
+import  React from 'react'
 import styles from '../styles/dashboard.module.scss'
 import Layout from '../components/Layout';
 import Cards from '../components/Cards';
 import Table from '../components/Table';
 
-const Dashboard: NextPage = () => {
+const Dashboard: React.FC = () => {
   return (
     <Layout>
       <div className={styles.dashboard}>

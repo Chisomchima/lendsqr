@@ -1,8 +1,8 @@
-import type { NextPage } from 'next'
+import  React from 'react'
 import styles from '../styles/cards.module.scss'
 import { HiOutlineUsers } from 'react-icons/hi'
 
-const Cards: NextPage = () => {
+const Cards:React.FC = () => {
     return (
         <div className={styles.cards}>
             <div className={styles.cardWrap}>

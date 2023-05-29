@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import  React from 'react'
 import Image from 'next/image'
 import { RxPerson } from 'react-icons/rx'
 import { BsStar, BsStarFill } from 'react-icons/bs'

@@ -1,9 +1,9 @@
-import type { NextPage } from 'next'
+import  React from 'react'
 import Image from 'next/image';
 import { useState, ChangeEvent, FormEvent } from 'react';
 import styles from '../styles/login.module.scss'
 
-const Login: NextPage = () => {
+const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 

@@ -1,10 +1,10 @@
-import type { NextPage } from 'next'
+import  React from 'react'
 import Image from 'next/image';
 import styles from '../styles/navbar.module.scss'
 import Link from 'next/link';
 import {BiSearch, BiBell, BiCaretDown} from "react-icons/bi"
 
-const NavBar: NextPage = () => {
+const NavBar: React.FC = () => {
     return (
         <div className={styles.navbar}>
             <div className={styles.wrap}>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { DateTime } from 'luxon';
-import DataTable from 'react-data-table-component';
+import DataTable, {TableColumn} from 'react-data-table-component';
 import { BiFilter } from 'react-icons/bi';
 import styles from '../styles/table.module.scss';
 import { getUsersData } from '../Service';
@@ -14,14 +14,14 @@ interface User extends UserData {
 type TableProps = {
   showFilter: boolean;
 };
-type CustomColumn = {
-  name?: string;
-  selector?: string;
-  sortable?: boolean;
-  width?: string;
-  cell?: (row: UserData) => React.ReactNode;
-  header?: (column: CustomColumn) => React.ReactNode;
-};
+// type CustomColumn = {
+//   name?: string;
+//   selector?: string;
+//   sortable?: boolean;
+//   width?: string;
+//   cell?: (row: UserData) => React.ReactNode;
+//   header?: (column: CustomColumn) => React.ReactNode;
+// };
 
 interface FilterValues {
   organization: string;
@@ -32,34 +32,34 @@ interface FilterValues {
   date: string;
 }
 
-const columns: CustomColumn = [
+const columns:TableColumn<User>[] = [
   {
     name: 'Organization',
-    selector: 'orgName',
+    selector: (row: User) => row.orgName,
     sortable: true,
     width: '150px',
   },
   {
     name: 'Username',
-    selector: 'userName',
+    selector: (row: User) => row.userName,
     sortable: true,
     width: '140px',
   },
   {
     name: 'Email',
-    selector: 'email',
+    selector: (row: User) => row.email,
     sortable: true,
     width: '140px',
   },
   {
     name: 'Phone number',
-    selector: 'phoneNumber',
+    selector: (row: User) => row.phoneNumber,
     sortable: true,
     width: '180px',
   },
   {
     name: 'Date joined',
-    selector: 'createdAt',
+    selector: (row: User) => row.createdAt,
     sortable: true,
     width: '190px',
     cell: (row: User) => {
@@ -69,10 +69,7 @@ const columns: CustomColumn = [
   },
   {
     name: 'Status',
-    selector: 'status',
-    sortable: true,
-    sortIcon: <BiFilter />,
-    sortIndicator: () => <BiFilter />,
+    selector: (row: User) => row.lastActiveDate,
     cell: (row: User) => {
       const lastActiveDate = new Date(row.lastActiveDate);
       const threeMonthsAgo = new Date();

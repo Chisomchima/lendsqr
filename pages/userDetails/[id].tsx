@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import  React from 'react'
 import styles from '../../styles/userDetails.module.scss'
 import Layout from '../../components/Layout';
 import { useRouter } from 'next/router';
@@ -10,7 +10,7 @@ import { getUserById } from '../../Service';
 import UserData from '../../types';
 import Link from 'next/link';
 
-const UserDetails: NextPage = () => {
+const UserDetails: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
 

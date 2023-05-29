@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import  React from 'react'
 import { MdHomeRepairService, MdPeopleAlt } from 'react-icons/md'
 import { AiOutlineDown, AiOutlineReconciliation } from 'react-icons/ai'
 import { FaHome, FaRegHandshake, FaHandHoldingUsd, FaCoins, FaChartBar } from 'react-icons/fa'
@@ -10,7 +10,7 @@ import { GrTransaction } from 'react-icons/gr'
 import { RiFilePaper2Line } from 'react-icons/ri'
 import styles from '../styles/sidebar.module.scss'
 
-const SideBar: NextPage = () => {
+const SideBar: React.FC = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.wrap}>
