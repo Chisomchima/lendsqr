@@ -1,31 +1,21 @@
-.layout {
-  width: 100%;
+.divider {
+  display: flex;
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
 
-  .divider {
-    display: flex;
-    width: 100%;
+  aside {
+    flex: 1;
+    background: #ffffff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
     height: 100%;
+  }
 
-    aside {
-      flex: 1;
-      background: #ffffff;
-      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-      height: 100%;
-    }
-
-    main {
-      flex: 4;
-      background-color: #e8d8d826;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-    }
+  main {
+    flex: 4;
+    background-color: #e8d8d826;
+    height: 100%;
   }
 }
+
 
 @media (max-width: 768px) {
   aside {

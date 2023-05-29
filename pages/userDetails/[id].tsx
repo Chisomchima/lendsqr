@@ -45,7 +45,7 @@ const UserDetails: NextPage = () => {
           <Link className={styles.backNavigationText} href={`/dashboard`}>Back to Users</Link>
         </div>
         <div className={styles.detailsHeader}>
-          <h2 className={styles.detailsTitle}>Users</h2>
+          <h2 className={styles.detailsTitle}>User Details</h2>
           <div className={styles.detailButtons}>
             <button className={styles.blacklist}>Blacklist User</button>
             <button className={styles.activate}>Activate User</button>

@@ -1,15 +1,14 @@
 import type { NextPage } from 'next'
 import Image from 'next/image';
 import styles from '../styles/navbar.module.scss'
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+import Link from 'next/link';
 import {BiSearch, BiBell, BiCaretDown} from "react-icons/bi"
 
 const NavBar: NextPage = () => {
     return (
         <div className={styles.navbar}>
             <div className={styles.wrap}>
-                <div className={styles.logo} style={{
+                <Link  href="/" className={styles.logo} style={{
                     width: "30px",
                     flex: 1,
                     height: "30px",
@@ -17,7 +16,7 @@ const NavBar: NextPage = () => {
                 }}>
                     <Image src="/union.svg" alt="My Image" width={20} height={20}/>
                     <Image src="/lendsqr.svg" alt="My Image" width={100} height={20} />
-                </div>
+                </Link>
                 <div className={styles.search}>
                     <div className={styles.inputGroup}>
                         <input

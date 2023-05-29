@@ -1,21 +1,19 @@
 .details {
     width: 90%;
-    padding-top: 10px;
+    padding-top: 30px;
     margin-bottom: 30px;
     margin: auto;
-    height: 90%;
+    height: 85%;
     overflow-y: auto;
     
 
     .detailsBackNavigation {
-        margin-left: 40px;
-        margin-top: 40px;
+        margin-left: 10px;
         color: #545F7D;
 
         .backNavigationIcon {
             width: 60px;
             margin-right: 10px;
-            margin-top: 2px;
         }
 
         .backNavigationText {
@@ -32,7 +30,7 @@
 
         .detailsTitle {
             margin-left: 10px;
-            margin-top: 30px;
+            margin-top: 10px;
             font-weight: 500;
             font-size: 24px;
             line-height: 28px;
