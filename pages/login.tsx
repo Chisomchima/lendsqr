@@ -17,7 +17,6 @@ const Login: NextPage = () => {
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
-        // Perform any action with email and password values
         console.log('Email:', email);
         console.log('Password:', password);
     };
@@ -42,24 +41,28 @@ const Login: NextPage = () => {
                 <div className={styles.formWrap}>
                     <div className={styles.formHeading}>
                         <h1>Welcome</h1>
-                        <span>Enter details to login.</span>
+                        <span className={styles.dets}>Enter details to login.</span>
                     </div>
                     <div className={styles.formInputs}>
-                        <input type="email" value={email} onChange={handleEmailChange} placeholder="Email" />
-                        <div className="password-input">
+                        <input className={styles.email} type="email" value={email} onChange={handleEmailChange} placeholder="Email" />
+                        <div className={styles.passwordInput}>
                             <input
+                                className={styles.password}
                                 type="password"
                                 placeholder="Password"
                                 value={password}
                                 onChange={handlePasswordChange}
                             />
-                            <span className="password-icon">show</span>
+                            <span className={styles.show}>show</span>
                         </div>
-
+                        <span className={styles.forgotPassword}>Forgot PASSWORD?</span>
+                        <div className={styles.buttonContainer}>
+                            <span> LOG IN</span>
+                        </div>
                     </div>
+
                 </div>
             </div>
-
         </div>
     )
 }

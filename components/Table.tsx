@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import { DateTime } from 'luxon';
 import DataTable from 'react-data-table-component';
 import { BiFilter } from 'react-icons/bi';
@@ -10,6 +11,17 @@ import DropdownCell from './Dropdown';
 interface User extends UserData {
   id: string;
 }
+type TableProps = {
+  showFilter: boolean;
+};
+type CustomColumn = {
+  name?: string;
+  selector?: string;
+  sortable?: boolean;
+  width?: string;
+  cell?: (row: UserData) => React.ReactNode;
+  header?: (column: CustomColumn) => React.ReactNode;
+};
 
 interface FilterValues {
   organization: string;
@@ -20,33 +32,29 @@ interface FilterValues {
   date: string;
 }
 
-const columns = [
+const columns: CustomColumn = [
   {
     name: 'Organization',
     selector: 'orgName',
     sortable: true,
-    sortIndicator: <BiFilter />,
     width: '150px',
   },
   {
     name: 'Username',
     selector: 'userName',
     sortable: true,
-    sortIndicator: <BiFilter />,
     width: '140px',
   },
   {
     name: 'Email',
     selector: 'email',
     sortable: true,
-    sortIndicator: <BiFilter />,
     width: '140px',
   },
   {
     name: 'Phone number',
     selector: 'phoneNumber',
     sortable: true,
-    sortIndicator: <BiFilter />,
     width: '180px',
   },
   {
@@ -63,7 +71,8 @@ const columns = [
     name: 'Status',
     selector: 'status',
     sortable: true,
-    sortIndicator: <BiFilter />,
+    sortIcon: <BiFilter />,
+    sortIndicator: () => <BiFilter />,
     cell: (row: User) => {
       const lastActiveDate = new Date(row.lastActiveDate);
       const threeMonthsAgo = new Date();
@@ -116,7 +125,7 @@ const columns = [
   },
 ];
 
-const Table: React.FC = () => {
+const Table: React.FC<TableProps> = ({ showFilter }) => {
   const [tableData, setTableData] = useState<User[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -132,7 +141,19 @@ const Table: React.FC = () => {
 
   useEffect(() => {
     fetchData();
+
   }, []);
+  
+  useEffect(() => {
+    const tableIcon = document.querySelectorAll('.KUTzo');
+    tableIcon.forEach((el) => {
+      if (el) {
+        // el.innerHTML = `<div>${<BiFilter />}</div>`
+        ReactDOM.render(<BiFilter />, el);
+      }
+    })
+
+  }, [tableData, currentPage, rowsPerPage, itemsPerPageOptions, filterValues]);
 
   const fetchData = async () => {
     const usersData = await getUsersData();
@@ -243,113 +264,113 @@ const Table: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.filter}>
+      {showFilter &&
+        (<div className={styles.filter}>
+          <div className={styles.inputs}>
+            <label htmlFor="organization">Organization</label>
+            <select
+              id="organization"
+              value={filterValues.organization}
+              onChange={(e) =>
+                setFilterValues((prevState) => ({
+                  ...prevState,
+                  organization: e.target.value,
+                }))
+              }
+            >
+              <option value="">Select</option>
+              <option value="organization1">Organization 1</option>
+              <option value="organization2">Organization 2</option>
+              {/* Add more options for each organization */}
+            </select>
+          </div>
 
-        <div className={styles.inputs}>
-          <label htmlFor="organization">Organization</label>
-          <select
-            id="organization"
-            value={filterValues.organization}
-            onChange={(e) =>
-              setFilterValues((prevState) => ({
-                ...prevState,
-                organization: e.target.value,
-              }))
-            }
-          >
-            <option value="">Select</option>
-            <option value="organization1">Organization 1</option>
-            <option value="organization2">Organization 2</option>
-            {/* Add more options for each organization */}
-          </select>
-        </div>
+          <div className={styles.inputs}>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="User"
+              value={filterValues.username}
+              onChange={(e) =>
+                setFilterValues((prevState) => ({
+                  ...prevState,
+                  username: e.target.value,
+                }))
+              }
+            />
+          </div>
 
-        <div className={styles.inputs}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            placeholder="User"
-            value={filterValues.username}
-            onChange={(e) =>
-              setFilterValues((prevState) => ({
-                ...prevState,
-                username: e.target.value,
-              }))
-            }
-          />
-        </div>
+          <div className={styles.inputs}>
+            <label htmlFor="phone">Phone</label>
+            <input
+              type="text"
+              id="phone"
+              placeholder="Phone"
+              value={filterValues.phone}
+              onChange={(e) =>
+                setFilterValues((prevState) => ({
+                  ...prevState,
+                  phone: e.target.value,
+                }))
+              }
+            />
+          </div>
 
-        <div className={styles.inputs}>
-          <label htmlFor="phone">Phone</label>
-          <input
-            type="text"
-            id="phone"
-            placeholder="Phone"
-            value={filterValues.phone}
-            onChange={(e) =>
-              setFilterValues((prevState) => ({
-                ...prevState,
-                phone: e.target.value,
-              }))
-            }
-          />
-        </div>
+          <div className={styles.inputs}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              placeholder="Email"
+              value={filterValues.email}
+              onChange={(e) =>
+                setFilterValues((prevState) => ({
+                  ...prevState,
+                  email: e.target.value,
+                }))
+              }
+            />
+          </div>
 
-        <div className={styles.inputs}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            placeholder="Email"
-            value={filterValues.email}
-            onChange={(e) =>
-              setFilterValues((prevState) => ({
-                ...prevState,
-                email: e.target.value,
-              }))
-            }
-          />
-        </div>
+          <div className={styles.inputs}>
+            <label htmlFor="status">Status</label>
+            <input
+              type="text"
+              id="status"
+              placeholder="Status"
+              value={filterValues.status}
+              onChange={(e) =>
+                setFilterValues((prevState) => ({
+                  ...prevState,
+                  status: e.target.value,
+                }))
+              }
+            />
+          </div>
 
-        <div className={styles.inputs}>
-          <label htmlFor="status">Status</label>
-          <input
-            type="text"
-            id="status"
-            placeholder="Status"
-            value={filterValues.status}
-            onChange={(e) =>
-              setFilterValues((prevState) => ({
-                ...prevState,
-                status: e.target.value,
-              }))
-            }
-          />
-        </div>
+          <div className={styles.inputs}>
+            <label htmlFor="date">Date</label>
+            <input
+              type="text"
+              id="date"
+              placeholder="Date"
+              value={filterValues.date}
+              onChange={(e) =>
+                setFilterValues((prevState) => ({
+                  ...prevState,
+                  date: e.target.value,
+                }))
+              }
+            />
+          </div>
 
-        <div className={styles.inputs}>
-          <label htmlFor="date">Date</label>
-          <input
-            type="text"
-            id="date"
-            placeholder="Date"
-            value={filterValues.date}
-            onChange={(e) =>
-              setFilterValues((prevState) => ({
-                ...prevState,
-                date: e.target.value,
-              }))
-            }
-          />
-        </div>
+          <div className={styles.buttons}>
+            <button onClick={handleFilter}>Reset</button>
+            <button onClick={handleClearAll}>Filter</button>
+          </div>
 
-        <div className={styles.buttons}>
-          <button onClick={handleFilter}>Reset</button>
-          <button onClick={handleClearAll}>Filter</button>
-        </div>
-
-      </div>
+        </div>)}
       <div className={styles.table}>
         <DataTable
           columns={columns}

@@ -3,71 +3,117 @@
     display: flex;
     align-items: center;
     margin: auto;
-    
-
+  
     .cardWrap {
-        width: 100%;
-        display: flex;
-        align-items: center;
-
-        .card {
-            flex: 1;
-            margin-right: 20px;
-            padding: 35px 20px;
-            background: #ffffff;
-            border: 1px solid rgba(33, 63, 125, 0.06);
-            box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-            border-radius: 4px;
-
-            .iconCircle:nth-child(1) {
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background: #e018ff18;
-                color: #df18ff;
-            }
-
-            .iconCircle:nth-child(2) {
-                width: 500px;
-                height: 500px;
-                border-radius: 50%;
-                background: #5618ff13;
-                color: #5718ff;
-            }
-
-            .iconCircle:nth-child(3) {
-                width: 500px;
-                height: 500px;
-                border-radius: 50%;
-                background: #f55f441a;
-                color: #f55f44;
-            }
-
-            .iconCircle:nth-child(4) {
-                width: 500px;
-                height: 500px;
-                border-radius: 50%;
-                background: #ff336616;
-                color: #ff3366;
-            }
-
-            .cardName {
-                color: #545f7d;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 16px;
-                text-transform: uppercase;
-            }
-
-            .cardNumber {
-                font-weight: 600;
-                font-size: 24px;
-                line-height: 28px;
-                color: #213F7D;
-            }
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  
+      .card {
+        flex: 1 1 23%;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding: 35px 20px;
+        background: #ffffff;
+        border: 1px solid rgba(33, 63, 125, 0.06);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+  
+        .iconCircle1 {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          color: #DF18FF;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10px;
+          background-color: #e018ff23;
         }
-        .card:last-child{
-            margin-right: 0px;
+        
+
+        .iconCircle2 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            color:  #5718FF;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            background-color:  #5618ff2a;
+          }
+
+          .iconCircle3 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            color:  #F55F44;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            background-color:  #f55f442a;
+          }
+
+          .iconCircle4 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            color:  #FF3366;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            background-color:  #ff33662c;
+          }
+        .cardName {
+          color: #545f7d;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          text-transform: uppercase;
+          margin-bottom: 10px;
         }
+  
+        .cardNumber {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 28px;
+          color: #213F7D;
+        }
+      }
+      .card:last-child{
+        margin-right: 0px  !important;
+      }
     }
-}
+  
+    @media (max-width: 1200px) {
+      .cardWrap {
+        justify-content: center;
+        margin-right: 50px;
+  
+        .card {
+          flex: 1 1 48%;
+          margin-right: 20px;
+  
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .cardWrap {
+        justify-content: center;
+        margin-right: 70%;
+        .card {
+          flex: 1 1 100%;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  

@@ -1,14 +1,15 @@
 .dashboard {
   width: 90%;
-  padding-top: 10px;
+  // padding-top: 10px;
   margin-bottom: 50px;
-  margin: auto;
+  // margin: auto;
   height: 90%;
   overflow-y: auto;
+  overflow-x: hidden;
 
   .dashboardtitle {
-    margin-left: 40px;
-    margin-top: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;

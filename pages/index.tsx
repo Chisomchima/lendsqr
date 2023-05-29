@@ -8,7 +8,8 @@ const Home: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.background}></div>
       <div className={styles.content}>
-        <h1 className={styles.title}>Welcome to the Home Page</h1>
+        <h1 className={styles.title}>Lendsqr Test By Chisom Chima</h1>
+        <p>Click on the links below to view pages</p>
         <nav className={styles.nav}>
           <Link href="/login" className={styles.link}>
             Login
@@ -16,10 +17,10 @@ const Home: React.FC = () => {
           <Link href="/dashboard" className={styles.link}>
             Dashboard
           </Link>
-          {/* <Link href="/user">
-            <a className={styles.link}>User</a>
+          <Link href="/user" className={styles.link}>
+            User
           </Link>
-          <Link href="/user-details">
+          {/* <Link href="/user-details">
             <a className={styles.link}>User Details</a>
           </Link> */}
         </nav>

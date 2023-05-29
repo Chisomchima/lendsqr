@@ -120,3 +120,58 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .userInfo {
+      width: 100%;
+    }
+  
+    .userInfoWrap {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .personAvatar {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+  
+    .person {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .name {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  
+    .userNumber {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  
+    .tier {
+      margin-top: 10px;
+    }
+  
+    .tierText {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  
+    .stars {
+      margin-top: 5px;
+    }
+  
+    .omo {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  
+    .omo span {
+      margin-bottom: 10px;
+    }
+  }

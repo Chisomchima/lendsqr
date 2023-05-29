@@ -1,30 +1,25 @@
 import type { NextPage } from 'next'
-import {
-  customers,
-  business,
-  settings
-} from '../data'
 import { MdHomeRepairService, MdPeopleAlt } from 'react-icons/md'
 import { AiOutlineDown, AiOutlineReconciliation } from 'react-icons/ai'
 import { FaHome, FaRegHandshake, FaHandHoldingUsd, FaCoins, FaChartBar } from 'react-icons/fa'
 import { IoIosPeople } from 'react-icons/io'
-import {TbMoneybag, TbPigMoney, TbWindmill} from 'react-icons/tb'
-import {BsFillPersonCheckFill, BsFillPersonDashFill, BsPersonGear} from 'react-icons/bs'
-import {BiHomeHeart, BiSlider, BiBadge} from 'react-icons/bi'
-import {GrTransaction} from 'react-icons/gr'
-import {RiFilePaper2Line} from 'react-icons/ri'
+import { TbMoneybag, TbPigMoney, TbWindmill } from 'react-icons/tb'
+import { BsFillPersonCheckFill, BsFillPersonDashFill, BsPersonGear } from 'react-icons/bs'
+import { BiHomeHeart, BiSlider, BiBadge } from 'react-icons/bi'
+import { GrTransaction } from 'react-icons/gr'
+import { RiFilePaper2Line } from 'react-icons/ri'
 import styles from '../styles/sidebar.module.scss'
 
 const SideBar: NextPage = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.wrap}>
-        <div className={styles.iconWrap} style={{marginBottom: "25px", color: "#213F7D",}}>
+        <div className={styles.iconWrap} style={{ marginBottom: '25px', color: '#213F7D' }}>
           <span className={styles.icon}><MdHomeRepairService /></span>
-          <span className={styles.name} style={{paddingRight: "10px",}}>Switch Organization</span>
-          <span className={styles.icon2} style={{fontSize: "12px", paddingTop: '5px', fontWeight:'bolder',}}><AiOutlineDown /></span>
+          <span className={styles.name} style={{ paddingRight: '10px' }}>Switch Organization</span>
+          <span className={styles.icon2} style={{ fontSize: '12px', paddingTop: '5px', fontWeight: 'bolder' }}><AiOutlineDown /></span>
         </div>
-        <div className={styles.iconWrap} style={{marginBottom: "20px",}}>
+        <div className={styles.iconWrap} style={{ marginBottom: '20px' }}>
           <span className={styles.icon}><FaHome /></span>
           <span className={styles.name}>Dashboard</span>
         </div>
@@ -61,7 +56,7 @@ const SideBar: NextPage = () => {
           <span className={styles.icon}><BsFillPersonDashFill /></span>
           <span className={styles.name}>Karma</span>
         </div>
-        <span  className={styles.sectionHeader}>BUSINESSES</span>
+        <span className={styles.sectionHeader}>BUSINESSES</span>
         <div className={styles.iconWrap}>
           <span className={styles.icon}><MdHomeRepairService /></span>
           <span className={styles.name}>Organization</span>
@@ -98,7 +93,7 @@ const SideBar: NextPage = () => {
           <span className={styles.icon}><FaChartBar /></span>
           <span className={styles.name}>Reports</span>
         </div>
-        <span  className={styles.sectionHeader}>SETTINGS</span>
+        <span className={styles.sectionHeader}>SETTINGS</span>
         <div className={styles.iconWrap}>
           <span className={styles.icon}><BiSlider /></span>
           <span className={styles.name}>Preferences</span>
@@ -116,4 +111,4 @@ const SideBar: NextPage = () => {
   )
 }
 
-export default SideBar
+export default SideBar;
