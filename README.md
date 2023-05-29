@@ -14,18 +14,12 @@ This is my implementation of the dashboard UI given for my Lendsqr Job Applicati
 - [Usage](#usage)
 - [File Structure](#file-structure)
 - [Features](#features)
-- [API Documentation](#api-documentation)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-- [Credits](#credits)
-- [Contact](#contact)
 
 ## Installation
 
 To get started with the Project, follow these simple steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/awesome-project.git`
+1. Clone the repository: `git clone https://github.com/Chisomchima/lendsqr.git`
 2. Install the dependencies: `yarn`
 
 ## Usage
