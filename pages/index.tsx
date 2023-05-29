@@ -1,9 +1,10 @@
 // pages/index.tsx
+import { NextPage } from 'next';
 import  React from 'react'
 import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
 
-const Home: React.FC = () => {
+const Home: NextPage  = () => {
   return (
     <div className={styles.container}>
       <div className={styles.background}></div>
@@ -20,9 +21,6 @@ const Home: React.FC = () => {
           <Link href="/user" className={styles.link}>
             User
           </Link>
-          {/* <Link href="/user-details">
-            <a className={styles.link}>User Details</a>
-          </Link> */}
         </nav>
       </div>
     </div>
